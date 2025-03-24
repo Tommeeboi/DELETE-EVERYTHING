@@ -1,0 +1,166 @@
+/* WARNING
+if you didn't already read readme.md, this code is horrific. please shield your eyes
+*/
+
+body {
+    font-family: "Roboto";
+}
+
+button {
+    font-family: "Roboto";
+}
+
+.delBtnContainer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#deleteFirst {
+    background-color: hsl(0, 100%, 45%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1275px;
+    font-size: 125px;
+    border: 10px solid #000;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 250ms 50ms;
+}
+
+#deleteFirst:hover {
+    background-color: hsl(0, 100%, 35%);
+}
+
+#delPopUpBG {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    display: none;
+}
+
+.delPopUp {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 750px;
+    background-color: #000;
+    color: #fff;
+    border: 5px solid #fff;
+    border-radius: 5px;
+    padding: 10px;
+    padding-top: 12px;
+    font-weight: 700;
+    font-size: 30px;
+    animation: zoomIn 250ms;
+}
+
+.popTitle {
+    text-align: center;
+    font-size: 40px !important;
+}
+
+hr {
+    border: 2px solid #fff;
+}
+
+/* #thingsToDelete {
+    float: right;
+    height: 35px;
+    margin-top: 0px;
+    font-family: "Roboto";
+    font-size: 25px;
+    background-color: #000;
+    color: #fff;
+    border: 3px solid #fff;
+    font-weight: 700;
+} */
+
+#thingsToDelete {
+    float: right;
+    border: 3px solid #fff;
+    text-align: left;
+    font-size: 25px;
+    width: 260px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0px 5px;
+    cursor: pointer;
+    transition: background-color 100ms;
+}
+
+#thingsToDelete:hover, #ttdDropdown div:hover, #whereToDelete:hover, #wtdDropdown div:hover {
+    background-color: hsl(0, 0%, 10%);
+}
+
+#ttdMainText, #wtdMainText {
+    display: inline;
+}
+
+.v {
+    float: right;
+    font-size: 15px;
+    margin-left: 10px;
+    transform: scaleX(1.2);
+    font-weight: 400;
+}
+
+#ttdDropdown, #wtdDropdown {
+    position: absolute;
+    right: 10px;
+}
+
+#ttdDropdown div, #wtdDropdown div {
+    background-color: #000;
+    border: 3px solid #fff;
+    width: 260px;
+    padding: 0px 5px;
+    transition: background-color 100ms;
+}
+
+#nonPersonalDiv {
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+#whereToDelete {
+    margin-top: -35px;
+    float: right;
+    border: 3px solid #fff;
+    text-align: left;
+    font-size: 25px;
+    width: 260px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0px 5px;
+    cursor: pointer;
+    transition: background-color 100ms;
+}
+
+.wtdOuterText {
+    display: block;
+    margin-top: 20px;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0) translate(-50%, -50%);
+        transform-origin: top left;
+    }
+
+    to {
+        transform: scale(1) translate(-50%, -50%);
+        transform-origin: top left;
+    }
+}
