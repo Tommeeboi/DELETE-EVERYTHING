@@ -5,7 +5,7 @@ Have you ever wanted to DELETE EVERYTHING? Well then this is for you.
 
 In the click of a button, and then another button, and then another button, etc. you will successfully DELETE EVERYTHING.
 
---* Works on my machine!
---* Cool!
---* Not malware!
---* DELETES EVERYTHING!
+* Works on my machine!
+* Cool!
+* Not malware!
+* DELETES EVERYTHING!
