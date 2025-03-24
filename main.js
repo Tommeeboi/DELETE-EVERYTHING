@@ -47,10 +47,8 @@ const everythingWTD = document.getElementById("everythingWTD");
 
 whereToDeleteDiv.onclick = function() {
     if (wtdDropdown.style.display === "none") {
-        // wtdV.style.display = "none";
         wtdDropdown.style.display = "block";
     } else {
-        // wtdV.style.display = "block";
         wtdDropdown.style.display = "none";
     }
 }
@@ -65,4 +63,59 @@ allRegisteredDiv.onclick = function() {
 
 everythingWTD.onclick = function() {
     wtdMainText.innerText = "EVERYTHING";
+}
+
+
+const DELETEEVERYTHING = document.getElementById("DELETEEVERYTHING");
+const firstPart = document.getElementById("firstPart");
+const secondPart = document.getElementById("secondPart");
+
+
+const progressFull = document.getElementById("progressFull");
+const percentage = document.getElementById("percentage");
+const progressDesc = document.getElementById("progressDesc");
+
+let progress = 0;
+
+const progressArray = [
+    "Finding drives...",
+    "Granting permission...",
+    "Separating program from file system...",
+    "DELETING EVERYTHING..."
+];
+
+/*
+Finding drives...
+Granting permission...
+Separating program from file system...
+DELETING EVERYTHING...
+*/
+function increaseProgress() {
+    progress++;
+
+    progressFull.style.width = `${progress}%`;
+    percentage.innerText = `${progress}%`;
+
+    if (progress === 6) {
+        progressDesc.innerText = progressArray[1];
+    } else if (progress === 21) {
+        progressDesc.innerText = progressArray[2];
+    } else if (progress === 31) {
+        progressDesc.innerText = progressArray[3];
+    }
+
+    setTimeout(() => {
+        if (progress < 100) {
+            increaseProgress();
+        }
+    }, 100);
+}
+
+DELETEEVERYTHING.onclick = function() {
+    firstPart.style.display = "none";
+    secondPart.style.display = "block";
+
+    setTimeout(() => {
+        increaseProgress();
+    }, 1000);
 }

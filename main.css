@@ -168,6 +168,56 @@ hr {
     transition: background-color 250ms 50ms;
 }
 
+#secondPart {
+    display: none;
+    font-weight: 700;
+}
+
+#loadingDiv {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 750px;
+    text-align: center;
+}
+
+#deletingEverything {
+    font-size: 45px;
+}
+
+.procentageContainer {
+    margin-top: 10px;
+    margin-right: 45px;
+}
+
+#progressBar {
+    border: 5px solid #000;
+    width: 500px;
+    height: 25px;
+    display: inline-block
+}
+
+#progressFull {
+    background-color: rgb(0, 255, 0);
+    height: 100%;
+    width: 0%;
+}
+
+#percentage {
+    display: inline-block;
+    font-size: 30px;
+    margin-left: 10px;
+    position: absolute;
+    /* bottom: 3px; */
+}
+
+#progressDesc {
+    display: block;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
 @keyframes zoomIn {
     from {
         transform: scale(0) translate(-50%, -50%);

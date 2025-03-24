@@ -11,53 +11,70 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="delBtnContainer">
-        <button id="deleteFirst">DELETE EVERYTHING</button>
+    <div id="firstPart">
+        <div class="delBtnContainer">
+            <button id="deleteFirst">DELETE EVERYTHING</button>
+        </div>
+
+        <div id="delPopUpBG">
+            <div class="delPopUp">
+                <div class="popTitle">Deletion Settings</div>
+                <hr>
+                Things To Delete:
+                <!-- <select name="thingsToDelete" id="thingsToDelete">
+                    <option value="personal">Personal Stuff</option>
+                    <option value="nonPersonal">Non-Personal Stuff</option>
+                    <option value="everything1">EVERYTHING</option>
+                </select> -->
+
+                <div id="thingsToDelete">
+                    <div id="ttdSelect">
+                        <div id="ttdMainText">Personal Stuff</div>
+                        <div class="v">v</div>
+                    </div>
+
+                    <!-- for some reason display: none; has to be here for js to recognise it -->
+                    <div id="ttdDropdown" style="display: none;">
+                        <div id="personalDiv">Personal Stuff</div>
+                        <div id="nonPersonalDiv">Non-Personal Stuff</div>
+                        <div id="everythingTTD">EVERYTHING</div>
+                    </div>
+                </div>
+
+                <br>
+                <div class="wtdOuterText">Where To Delete:</div>
+                <!-- current drive, all registered drives, EVERYTHING -->
+                <div id="whereToDelete">
+                    <div id="wtdSelect">
+                        <div id="wtdMainText">Current Drive</div>
+                        <div class="v" id="wtdV">v</div>
+                    </div>
+
+                    <div id="wtdDropdown" style="display: none;">
+                        <div id="currentDiv">Current Drive</div>
+                        <div id="allRegisteredDiv">All Registered Drives</div>
+                        <div id="everythingWTD">EVERYTHING</div>
+                    </div>
+                </div>
+
+                <br>
+                <button id="DELETEEVERYTHING">DELETE EVERYTHING</button>
+            </div>
+        </div>
     </div>
 
-    <div id="delPopUpBG">
-        <div class="delPopUp">
-            <div class="popTitle">Deletion Settings</div>
-            <hr>
-            Things To Delete:
-            <!-- <select name="thingsToDelete" id="thingsToDelete">
-                <option value="personal">Personal Stuff</option>
-                <option value="nonPersonal">Non-Personal Stuff</option>
-                <option value="everything1">EVERYTHING</option>
-            </select> -->
+    <div id="secondPart">
+        <div id="loadingDiv">
+            <div id="deletingEverything">DELETING EVERYTHING</div>
 
-            <div id="thingsToDelete">
-                <div id="ttdSelect">
-                    <div id="ttdMainText">Personal Stuff</div>
-                    <div class="v">v</div>
+            <div class="procentageContainer">
+                <div id="progressBar">
+                    <div id="progressFull"></div>
                 </div>
-
-                <!-- for some reason display: none; has to be here for js to recognise it -->
-                <div id="ttdDropdown" style="display: none;">
-                    <div id="personalDiv">Personal Stuff</div>
-                    <div id="nonPersonalDiv">Non-Personal Stuff</div>
-                    <div id="everythingTTD">EVERYTHING</div>
-                </div>
+                <div id="percentage">0%</div>
             </div>
 
-            <br>
-            <div class="wtdOuterText">Where To Delete:</div>
-            <!-- current drive, all registered drives, EVERYTHING -->
-            <div id="whereToDelete">
-                <div id="wtdSelect">
-                    <div id="wtdMainText">Current Drive</div>
-                    <div class="v" id="wtdV">v</div>
-                </div>
-
-                <div id="wtdDropdown" style="display: none;">
-                    <div id="currentDiv">Current Drive</div>
-                    <div id="allRegisteredDiv">All Registered Drives</div>
-                    <div id="everythingWTD">EVERYTHING</div>
-                </div>
-            </div>
-
-            <br>
-            <button id="DELETEEVERYTHING">DELETE EVERYTHING</button>
+            <div id="progressDesc">Finding drives...</div>
         </div>
     </div>
 </body>
