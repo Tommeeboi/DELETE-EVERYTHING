@@ -33,7 +33,7 @@ button {
     transition: background-color 250ms 50ms;
 }
 
-#deleteFirst:hover {
+#deleteFirst:hover, #DELETEEVERYTHING:hover {
     background-color: hsl(0, 100%, 35%);
 }
 
@@ -151,6 +151,21 @@ hr {
 .wtdOuterText {
     display: block;
     margin-top: 20px;
+}
+
+#DELETEEVERYTHING {
+    background-color: hsl(0, 100%, 45%);
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+    font-size: 42px;
+    border: 3px solid #fff;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 250ms 50ms;
 }
 
 @keyframes zoomIn {
