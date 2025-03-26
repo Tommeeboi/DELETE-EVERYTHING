@@ -114,18 +114,23 @@ function increaseProgress() {
             secondPart.style.display = "none";
             thirdPart.style.display = "block";
             setTimeout(() => {
-                /* let explosionGIF = new SuperGif({ gif: document.getElementById("explosion") } );
-                explosionGIF.move_to(1); */
-                // let explosionGIF = "url(" + "assets/explosion.gif" + "?ts=" + Date.now() + ")";
                 let explosionGIF = "assets/explosion2.gif" + "?ts=" + Date.now();
                 explosion.src = explosionGIF;
                 explosion.style.display = "block";
-                // <img src="assets/explosion.gif" alt="explosion" id="explosion">
-                /* let explosionGIF = document.createElement("img");
-                explosionGIF.src = "assets/explosion.gif";
-                explosionGIF.id = "explosion";
-                thirdPart.appendChild(explosionGIF); */
+
+                var explosionSound = new Howl({
+                    src: ["assets/explosionSFX.mp3"],
+                    autoplay: true,
+                    volume: 1.0
+                });
+
+                explosionSound.play();
+                explosionSound.seek(3);
             }, 1000);
+
+            setTimeout(() => {
+                explosion.style.display = "none";
+            }, 2620);
         }
     }, 1);
 }
