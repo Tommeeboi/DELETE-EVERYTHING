@@ -69,11 +69,14 @@ everythingWTD.onclick = function() {
 const DELETEEVERYTHING = document.getElementById("DELETEEVERYTHING");
 const firstPart = document.getElementById("firstPart");
 const secondPart = document.getElementById("secondPart");
+const thirdPart = document.getElementById("thirdPart");
 
 
 const progressFull = document.getElementById("progressFull");
 const percentage = document.getElementById("percentage");
 const progressDesc = document.getElementById("progressDesc");
+
+const explosion = document.getElementById("explosion");
 
 let progress = 0;
 
@@ -105,10 +108,26 @@ function increaseProgress() {
     }
 
     setTimeout(() => {
-        if (progress < 100) {
+        if (progress < 99) {
             increaseProgress();
+        } else {
+            secondPart.style.display = "none";
+            thirdPart.style.display = "block";
+            setTimeout(() => {
+                /* let explosionGIF = new SuperGif({ gif: document.getElementById("explosion") } );
+                explosionGIF.move_to(1); */
+                // let explosionGIF = "url(" + "assets/explosion.gif" + "?ts=" + Date.now() + ")";
+                let explosionGIF = "assets/explosion2.gif" + "?ts=" + Date.now();
+                explosion.src = explosionGIF;
+                explosion.style.display = "block";
+                // <img src="assets/explosion.gif" alt="explosion" id="explosion">
+                /* let explosionGIF = document.createElement("img");
+                explosionGIF.src = "assets/explosion.gif";
+                explosionGIF.id = "explosion";
+                thirdPart.appendChild(explosionGIF); */
+            }, 1000);
         }
-    }, 100);
+    }, 1);
 }
 
 DELETEEVERYTHING.onclick = function() {
